@@ -6,7 +6,10 @@ export const config = {
 export default async function handler(req) {
     try {
         const { message } = await req.json();
-
+        const initialChatMessage = {
+            role: "system",
+            content: "your name is chatty."
+        }
         const stream = await OpenAIEdgeStream(
             'https://api.openai.com/v1/chat/completions',
             {
@@ -17,7 +20,7 @@ export default async function handler(req) {
                 method: "POST",
                 body: JSON.stringify({
                     model: "gpt-4o-mini",
-                    messages: [{ content: message, role: "user" }],
+                    messages: [initialChatMessage, { content: message, role: "user" }],
                     stream: true
                 }),
             });
