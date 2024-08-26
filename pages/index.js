@@ -4,6 +4,10 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import { getSession } from "@auth0/nextjs-auth0";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRobot } from "@fortawesome/free-solid-svg-icons";
+import { MachineLogo } from "components/MachineLogo";
+import Image from 'next/image';
+
+
 
 export default function Home() {
   const { isLoading, error, user } = useUser();
@@ -14,24 +18,19 @@ export default function Home() {
       <Head>
         <title>The Machine</title>
       </Head>
-      <div className="flex justify-center items-center min-h-screen w-full bg-gray-800 text-white text-center">
+      <div className="flex justify-center items-center min-h-screen w-full bg-black text-white text-center">
         <div>
-          <div>
-            <FontAwesomeIcon className="mb-2 text-emerald-200 text-6xl " icon={faRobot} />
+          <div className="flex items-center justify-center ">
+            <MachineLogo />
           </div>
-          <h1 className="text-4xl font-bold">
-            Welcome to the Machine
+          <h1 className="text-4xl font-bold mt-2 uppercase">
+            Can you hear me?
           </h1>
-          <p className="text-lg mt-2 ">
-            Login with your account
-          </p>
           <div
             className="mt-4 flex justify-center gap-3">
             {!user && (
               <>
                 <Link href="/api/auth/login" className="btn">Login</Link>
-                <Link href="/api/auth/signup" className="btn">Sign Up</Link>
-
               </>
             )}
           </div>

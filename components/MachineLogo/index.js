@@ -1,0 +1,1 @@
+export { MachineLogo } from "./MachineLogo"

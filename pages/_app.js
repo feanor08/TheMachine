@@ -3,12 +3,13 @@ import "../styles/globals.css";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css"
-import { Outfit } from "next/font/google"
+import { Inconsolata, Barlow_Semi_Condensed, Robo } from "next/font/google"
 config.autoAddCss = false;
 
-const outfit = Outfit({
+const outfit = Inconsolata({
   subsets: ['latin'],
   variable: '--font-outfit',
+  weight: '500'
 })
 
 function App({ Component, pageProps }) {

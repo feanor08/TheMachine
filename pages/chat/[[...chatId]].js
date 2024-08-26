@@ -11,6 +11,7 @@ import clientPromise from "lib/mongodb";
 import { ObjectId } from "mongodb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRobot } from "@fortawesome/free-solid-svg-icons";
+import { MachineLogo } from "components/MachineLogo";
 
 export default function ChatPage({ chatId, title, messages = [] }) {
     const [newChatId, setNewChatId] = useState(null);
@@ -113,8 +114,10 @@ export default function ChatPage({ chatId, title, messages = [] }) {
                     <div className="flex-1 flex flex-col-reverse text-white overflow-scroll">
                         {!allchatMessages.length && !incomingMessage &&
                             <div className="m-auto justify-center flex items-center text-center">
-                                <div>
-                                    <FontAwesomeIcon icon={faRobot} className="text-6xl text-emerald-200" />
+                                <div >
+                                    <div className="flex items-center justify-center ">
+                                        <MachineLogo />
+                                    </div>
                                     <h1 className="text-4xl font-bold text-white/50 mt-2">Ask a question</h1>
                                 </div >
                             </div>
