@@ -165,6 +165,7 @@ export const getServerSideProps = async (context) => {
     const chatId = context.params?.chatId?.[0] || null;
     if (chatId) {
         let objectId;
+
         try {
             objectId = new ObjectId(chatId);
         } catch (e) {
@@ -174,6 +175,8 @@ export const getServerSideProps = async (context) => {
                 },
             };
         };
+
+
         const { user } = await getSession(context.req, context.res);
         const client = await clientPromise;
         const db = client.db("Chatty");

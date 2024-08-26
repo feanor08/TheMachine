@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-chatgpt-starter",
-  "version": "0.1.0",
+  "name": "the-machine",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
